@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Latihan speed test PCPM: angka hilang dan huruf kembar, 250 soal dalam 7 menit 30 detik per model.">
+  <title>Speed Test · Latihan PCPM</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="Speed Test, halaman utama"><span class="brand-symbol">E-ST</span><span>SPEED TEST<span class="brand-sub">Latihan PCPM Bank Indonesia</span></span></a>
+      <span class="header-label">LATIHAN MANDIRI</span>
+      <div id="timer-area" hidden><span class="timer-label">Sisa waktu</span><span id="timer" class="timer">07:30</span></div>
+    </div>
+  </header>
+  <main>
+    <section id="home" class="home" aria-labelledby="home-title">
+      <div class="section-intro"><span class="eyebrow">SIMULASI KONSENTRASI</span><h1 id="home-title">Pilih model latihan Anda.</h1><p>Satu deret, satu jawaban. Jaga ketelitian sambil melatih kecepatan.</p></div>
+      <div class="model-grid" role="radiogroup" aria-label="Model latihan">
+        <label class="model-card"><input type="radio" name="model" value="1" checked><span class="card-top"><span class="model-number">MODEL 01</span><span class="selection-dot" aria-hidden="true"></span></span><h2>Angka hilang</h2><p>Temukan satu angka dari 0–9 yang tidak muncul dalam deret.</p><span class="example">7 2 9 4 0 6 3 8 1</span><span class="example-answer">Jawaban contoh <strong>5</strong></span></label>
+        <label class="model-card"><input type="radio" name="model" value="2"><span class="card-top"><span class="model-number">MODEL 02</span><span class="selection-dot" aria-hidden="true"></span></span><h2>Huruf kembar</h2><p>Temukan satu huruf yang muncul dua kali dalam deret.</p><span class="example">O S J E J X Q H K Y</span><span class="example-answer">Jawaban contoh <strong>J</strong></span></label>
+      </div>
+      <div class="setup-panel">
+        <div class="test-facts"><div><strong>250</strong><span>soal per model</span></div><div><strong>07:30</strong><span>menit per model</span></div><div><strong>1,8 detik</strong><span>rata-rata untuk menuntaskan semua soal</span></div></div>
+        <div class="setup-bottom"><label class="mode-label" for="input-mode">Cara mengirim jawaban<select id="input-mode"><option value="instant">Langsung lanjut setelah satu tombol</option><option value="enter">Ketik jawaban, lalu tekan Enter</option></select></label><button id="start" class="primary">Mulai latihan</button></div>
+      </div>
+      <div class="instructions"><span class="info-icon" aria-hidden="true">i</span><div><strong>Sebelum mulai</strong><p>Gunakan keyboard laptop atau tombol di layar. Timer dimulai setelah Anda menekan “Mulai latihan” dan tetap berjalan saat berpindah tab. Jawaban yang sudah dikirim tidak dapat diubah. Pembahasan muncul setelah latihan selesai.</p></div></div>
+      <p class="source-note">Jumlah soal dan durasi mengikuti bahan belajar yang Anda kirim. Tampilan ini terinspirasi antarmuka asesmen; bukan aplikasi resmi EXPERD atau Bank Indonesia.</p>
+    </section>
+
+    <section id="test" class="test" hidden aria-labelledby="test-title">
+      <div class="test-top"><div><span id="model-tag" class="eyebrow">MODEL 01</span><h1 id="test-title">Angka hilang</h1></div><button id="stop" class="quiet">Akhiri latihan</button></div>
+      <div class="progress-meta"><span>Soal <strong id="counter">1 / 250</strong></span><span><strong id="answered">0</strong> dijawab</span></div>
+      <div class="progress-track" role="progressbar" aria-label="Soal yang dijawab" aria-valuemin="0" aria-valuemax="250" aria-valuenow="0"><div id="progress"></div></div>
+      <div class="question-panel"><p id="instruction" class="question-instruction">Ketik angka yang tidak ada dalam deret.</p><div id="sequence" class="sequence" aria-label="Deret soal"></div><div id="answer-preview" class="answer-preview" aria-live="polite"><span>Jawaban Anda</span><strong id="pending">—</strong></div><p id="key-hint" class="key-hint">Satu tombol langsung mengirim jawaban.</p><p id="input-error" class="input-error" role="status"></p></div>
+      <div class="keyboard-heading"><span>KEYBOARD LAYAR</span><span id="keyboard-description">Angka 0–9</span></div>
+      <div id="keyboard" class="keyboard" aria-label="Keyboard jawaban"></div>
+      <div id="enter-actions" class="enter-actions" hidden><button id="erase" class="secondary">Hapus</button><button id="submit" class="primary" disabled>Kirim jawaban <kbd>Enter</kbd></button></div>
+      <p class="test-footnote">Fokus pada ketepatan. Tidak ada pemberitahuan benar atau salah selama latihan.</p>
+    </section>
+
+    <section id="result" class="result" hidden aria-labelledby="result-title">
+      <span class="eyebrow">EVALUASI LATIHAN</span><h1 id="result-title" tabindex="-1">Latihan selesai.</h1><p id="result-reason" class="result-reason"></p>
+      <div class="result-summary"><div class="score-block"><span>Jawaban benar</span><strong id="score">0 <small>/ 250</small></strong><span id="result-model">Model 1 · Angka hilang</span></div><div class="stats-grid"><div><strong id="accuracy">0%</strong><span>Akurasi dari yang dijawab</span></div><div><strong id="wrong">0</strong><span>Jawaban salah</span></div><div><strong id="unanswered">250</strong><span>Belum dijawab</span></div><div><strong id="rate">0</strong><span>Soal dijawab per menit</span></div></div></div>
+      <div class="result-detail"><span>Waktu terpakai <strong id="elapsed">00:00</strong></span><span>Rata-rata per jawaban <strong id="average">—</strong></span><span>Total dijawab <strong id="attempted">0</strong></span></div>
+      <p class="result-note">Akurasi = benar ÷ jumlah yang dijawab. Hasil ini untuk evaluasi latihan, bukan prediksi kelulusan.</p>
+      <div class="result-actions"><button id="retry" class="primary">Ulangi model ini</button><button id="back" class="secondary">Pilih model lain</button></div>
+      <div class="review-heading"><h2>Pembahasan jawaban</h2><label for="review-filter">Tampilkan<select id="review-filter"><option value="mistakes">Salah &amp; belum dijawab</option><option value="all">Semua soal</option></select></label></div>
+      <div id="review-empty" class="review-empty" hidden>Semua jawaban benar. Pilih “Semua soal” untuk melihat detail.</div>
+      <div id="review-wrapper" class="table-wrapper"><table><thead><tr><th scope="col">No.</th><th scope="col">Deret soal</th><th scope="col">Jawaban Anda</th><th scope="col">Kunci</th><th scope="col">Hasil</th></tr></thead><tbody id="review"></tbody></table></div>
+    </section>
+  </main>
+  <footer>Speed Test PCPM · Latihan pribadi Darrell Valentino</footer>
+  <dialog id="stop-dialog" aria-labelledby="dialog-title"><h2 id="dialog-title">Akhiri latihan sekarang?</h2><p>Timer tetap berjalan. Jawaban yang sudah dikirim akan dihitung, dan soal tersisa dicatat sebagai belum dijawab.</p><div class="dialog-actions"><button id="cancel-stop" class="secondary">Lanjutkan latihan</button><button id="confirm-stop" class="primary">Akhiri &amp; lihat hasil</button></div></dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
