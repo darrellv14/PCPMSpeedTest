@@ -1,0 +1,81 @@
+{
+  "totalQuestions": 210,
+  "totalKeys": 210,
+  "sets": [
+    {
+      "set": "evm-1",
+      "source": "E-VM (Values Measurement)(1).pdf",
+      "pages": 13,
+      "questions": 30,
+      "keys": 30,
+      "explanations": 30,
+      "options": 150,
+      "interpretations": 0,
+      "numbers": "1–30"
+    },
+    {
+      "set": "evm-2",
+      "source": "E-VM (Values Measurement) 2(1).pdf",
+      "pages": 20,
+      "questions": 30,
+      "keys": 30,
+      "explanations": 30,
+      "options": 150,
+      "interpretations": 0,
+      "numbers": "1–30"
+    },
+    {
+      "set": "epm-1",
+      "source": "E-PM (Personality Measurement)(1).pdf",
+      "pages": 14,
+      "questions": 50,
+      "keys": 50,
+      "explanations": 50,
+      "options": 250,
+      "interpretations": 250,
+      "numbers": "1–50"
+    },
+    {
+      "set": "epm-2",
+      "source": "E-PM (Personality Measurement) 2(1).pdf",
+      "pages": 11,
+      "questions": 25,
+      "keys": 25,
+      "explanations": 25,
+      "options": 125,
+      "interpretations": 125,
+      "numbers": "1–25"
+    },
+    {
+      "set": "eli-1",
+      "source": "E-LI (Leadership Indicator)(1).pdf",
+      "pages": 20,
+      "questions": 50,
+      "keys": 50,
+      "explanations": 50,
+      "options": 250,
+      "interpretations": 0,
+      "numbers": "1–50"
+    },
+    {
+      "set": "eli-2",
+      "source": "E-LI (Leadership Indicator) 2(1).pdf",
+      "pages": 16,
+      "questions": 25,
+      "keys": 25,
+      "explanations": 25,
+      "options": 125,
+      "interpretations": 0,
+      "numbers": "1–25"
+    }
+  ],
+  "verification": {
+    "independentReader": "pdfplumber",
+    "textFragmentsMatched": 1395,
+    "keysMatched": 210,
+    "missingQuestions": 0,
+    "missingKeys": 0,
+    "missingExplanations": 0,
+    "scaleDescriptions": 375
+  }
+}

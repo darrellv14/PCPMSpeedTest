@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Latihan E-VM, E-PM, dan E-LI dari enam PDF bahan belajar PCPM, lengkap dengan jawaban rujukan dan pembahasan.">
+  <title>E-VM, E-PM, E-LI · Latihan PCPM</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="inventory.css">
+</head>
+<body>
+  <header class="header"><div class="header-inner"><a class="brand" href="./"><span class="brand-symbol">PCPM</span><span>LATIHAN PSIKOLOGI<span class="brand-sub">Bank Indonesia · Latihan mandiri</span></span></a><span class="header-label">E-VM · E-PM · E-LI</span></div></header>
+  <main>
+    <nav class="subtest-nav" aria-label="Jenis latihan"><a href="./">E-ST · Speed test</a><a href="inventory.html" aria-current="page">E-VM / E-PM / E-LI</a></nav>
+    <section id="inventory-home" aria-labelledby="inventory-title">
+      <div class="section-intro"><span class="eyebrow">210 SOAL DARI 6 PDF</span><h1 id="inventory-title">Pilih subtes yang ingin dilatih.</h1><p>Kerjakan dahulu, lalu pelajari jawaban rujukan dan pembahasan pada akhir sesi.</p></div>
+      <div class="inventory-types" role="radiogroup" aria-label="Subtes">
+        <label class="inventory-type"><input name="inventory-type" type="radio" value="EVM" checked><span class="eyebrow">E-VM</span><h2>Values Measurement</h2><p>Situasi kerja dan nilai organisasi.</p><strong>60 soal · 2 paket</strong></label>
+        <label class="inventory-type"><input name="inventory-type" type="radio" value="EPM"><span class="eyebrow">E-PM</span><h2>Personality Measurement</h2><p>Pernyataan diri dengan skala 1–5.</p><strong>75 soal · 2 paket</strong></label>
+        <label class="inventory-type"><input name="inventory-type" type="radio" value="ELI"><span class="eyebrow">E-LI</span><h2>Leadership Indicator</h2><p>Kepemimpinan dan keputusan tim.</p><strong>75 soal · 2 paket</strong></label>
+      </div>
+      <div class="setup-panel"><div class="setup-bottom"><label class="mode-label" for="inventory-pack">Paket soal<select id="inventory-pack"><option value="all">Semua paket</option><option value="1">Paket 1</option><option value="2">Paket 2</option></select></label><div class="pack-count"><strong id="inventory-count">60</strong><span>soal · tanpa batas waktu</span></div><button id="inventory-start" class="primary">Mulai subtes</button></div></div>
+      <div class="instructions"><span class="info-icon" aria-hidden="true">i</span><div><strong id="inventory-instruction-title">Cara mengerjakan</strong><p id="inventory-instructions"></p></div></div>
+      <p class="reference-notice" id="inventory-notice"></p>
+      <details class="source-list"><summary>Rincian kelengkapan materi</summary><p>Seluruh nomor soal dipertahankan, termasuk soal yang mirip antar-paket. Kunci dan pembahasan berasal dari bahan belajar yang Anda unggah, bukan kunci resmi seleksi.</p><div id="source-list"></div></details>
+    </section>
+    <section id="inventory-test" hidden aria-labelledby="inventory-test-title">
+      <div class="test-top"><div><span id="inventory-test-tag" class="eyebrow"></span><h1 id="inventory-test-title"></h1></div><button id="inventory-finish" class="quiet">Selesai &amp; lihat hasil</button></div>
+      <div class="progress-meta"><span id="inventory-counter"></span><span><strong id="inventory-answered">0</strong> dijawab · <span id="inventory-elapsed">00:00</span> terpakai</span></div>
+      <div class="progress-track" id="inventory-progressbar" role="progressbar" aria-label="Jumlah soal dijawab" aria-valuemin="0" aria-valuenow="0"><div id="inventory-progress"></div></div>
+      <div class="inventory-workspace"><div><div class="inventory-question"><span class="question-source" id="inventory-source"></span><h2 id="inventory-prompt" tabindex="-1"></h2><fieldset id="inventory-options"><legend class="sr-only">Pilih jawaban</legend></fieldset></div><div class="inventory-controls"><button id="inventory-prev" class="secondary">Sebelumnya</button><button id="inventory-next" class="primary">Berikutnya</button></div><p class="test-footnote">Jawaban dapat diubah sebelum sesi diakhiri. Kunci dan pembahasan tampil setelah selesai.</p></div><aside class="question-navigation" aria-label="Navigasi nomor soal"><h2>Nomor soal</h2><p>Nomor berwarna biru sudah dijawab.</p><div id="inventory-numbers"></div></aside></div>
+    </section>
+    <section id="inventory-result" hidden aria-labelledby="inventory-result-title">
+      <span class="eyebrow">EVALUASI SUBTES</span><h1 id="inventory-result-title" tabindex="-1">Latihan selesai.</h1><p id="inventory-result-context" class="result-reason"></p><p id="inventory-result-notice" class="reference-notice"></p>
+      <div class="inventory-result-stats"><div><strong id="inventory-matched">0</strong><span id="inventory-match-label"></span></div><div><strong id="inventory-different">0</strong><span id="inventory-different-label"></span></div><div><strong id="inventory-blank">0</strong><span>Belum dijawab</span></div><div><strong id="inventory-percent">0%</strong><span>Sesuai rujukan dari yang dijawab</span></div></div>
+      <div class="result-actions"><button id="inventory-retry" class="primary">Ulangi paket ini</button><button id="inventory-back" class="secondary">Pilih subtes lain</button></div>
+      <div class="review-heading"><h2>Jawaban &amp; pembahasan</h2><label for="inventory-review-filter">Tampilkan<select id="inventory-review-filter"><option value="all">Semua soal</option><option value="different">Berbeda &amp; belum dijawab</option><option value="match">Sesuai rujukan</option></select></label></div>
+      <p id="inventory-review-empty" class="review-empty" hidden>Tidak ada soal untuk filter ini.</p><div id="inventory-review"></div>
+    </section>
+  </main>
+  <footer>Latihan PCPM · Materi pribadi Darrell Valentino</footer>
+  <dialog id="inventory-finish-dialog" aria-labelledby="inventory-dialog-title"><h2 id="inventory-dialog-title">Selesaikan subtes?</h2><p id="inventory-dialog-text"></p><div class="dialog-actions"><button id="inventory-cancel-finish" class="secondary">Kembali mengerjakan</button><button id="inventory-confirm-finish" class="primary">Lihat hasil</button></div></dialog>
+  <script type="module" src="inventory.js"></script>
+</body>
+</html>

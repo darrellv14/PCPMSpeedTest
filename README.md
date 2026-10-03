@@ -83,3 +83,48 @@ pcpm-speed-test/
 Uji logika generator, deadline, dan perhitungan hasil: `npm test`.
 
 Seluruh pemrosesan berlangsung di browser Anda. Server bawaan hanya menyajikan aset dan mendengarkan koneksi lokal (127.0.0.1).
+
+## E-VM, E-PM, E-LI (v1.1)
+
+Buka menu **E-VM / E-PM / E-LI**, atau `/inventory.html`.
+
+| Subtes | Paket 1 | Paket 2 | Total |
+| --- | ---: | ---: | ---: |
+| E-VM | 30 | 30 | 60 |
+| E-PM | 50 | 25 | 75 |
+| E-LI | 50 | 25 | 75 |
+| Total | 130 | 80 | 210 |
+
+Seluruh 210 soal, 210 jawaban referensi dan 210 pembahasan diekstrak dari keenam PDF yang diunggah. Seluruh 375 uraian pilihan skala E-PM (75 × 5) disimpan. Opsi A–E dipertahankan sesuai urutan PDF. Soal mirip atau berulang antar-paket tetap dipertahankan.
+
+Pilih satu paket atau gabungan kedua paket pada subtes yang sama. Tiap soal memiliki ID unik, nomor asli, nama PDF, halaman soal dan halaman pembahasan. Tidak ditambahkan batas waktu karena durasi tiga subtes tersebut tidak tercantum dalam PDF. Waktu terpakai dicatat.
+
+Jawaban dapat diubah dan nomor soal dapat dikunjungi kembali sebelum selesai. Setelah sesi selesai, jawaban dikunci; hasil menampilkan jawaban sendiri, jawaban rujukan, dan pembahasan. Filter hasil mencakup semua soal, sesuai rujukan, atau berbeda/belum dijawab.
+
+### Arti evaluasi
+
+- **E-VM / E-LI**: benar/salah menurut kunci bahan latihan PDF. Materi tersebut bukan kunci resmi EXPERD/Bank Indonesia. Pembahasan sumber menjelaskan opsi kunci; tidak dibuat-buat alasan untuk setiap opsi lain yang tidak dijelaskan oleh PDF. Semua pilihan A–E dapat dilihat kembali di pembahasan.
+- **E-PM**: sesuai/berbeda dari referensi PDF, bukan kepribadian benar/salah. Uraian untuk jawaban sendiri dan jawaban referensi ditampilkan. Seluruh uraian 1–5 tersedia. Tetap isi inventori kepribadian sesuai diri sendiri. Uraian dalam bahan belajar tidak dijadikan diagnosis atau hasil psikometri resmi.
+- Belum dijawab dihitung terpisah dari respons yang berbeda. Persentase kecocokan menggunakan jumlah yang sudah dijawab sebagai penyebut, dengan 0% jika belum ada jawaban.
+
+Bank soal dan kunci tersimpan dalam `dist/inventory-data.js`. Karena latihan berjalan di browser, data kunci secara teknis dapat dibaca dari source code. Antarmuka baru menampilkan pembahasan sesudah selesai.
+
+### Audit ekstraksi
+
+`extraction-audit.json` mencatat jumlah soal, kunci, pembahasan, pilihan dan uraian skala per PDF. Pemeriksaan kedua menggunakan pembaca PDF berbeda memverifikasi 1.395 fragmen teks (soal, pilihan, pembahasan/uraian skala) dan mencocokkan 210 kunci. Normalisasi hanya mencakup spasi/baris dan tanda hubung terpisah hasil ekstraksi; makna materi tidak diganti. Ejaan yang sudah ada dalam sumber dapat tetap muncul. Hash SHA-256 tiap PDF asal tersimpan di bank soal.
+
+Sepuluh pemeriksaan otomatis (`npm test`) mencakup E-ST dan bank soal baru, navigasi, perubahan jawaban, jawaban invalid, perhitungan hasil, serta seluruh paket yang diselesaikan. Pengujian browser visual belum dilakukan di lingkungan pembuatan.
+
+### Memperbarui repository
+
+Ekstrak isi paket pembaruan ke folder repository Anda, sehingga `dist`, `test`, `package.json`, dan `vercel.json` berada langsung di root repository. Pertahankan folder `.git` yang sudah ada. Jalankan:
+
+```powershell
+npm.cmd test
+git status
+git add dist test package.json README.md extraction-audit.json
+git commit -m "Add complete EVM EPM ELI practice sets and PDF explanations"
+git push origin main
+```
+
+Jika repository sudah terhubung dengan Vercel, push ke cabang produksi akan memicu deployment sesuai pengaturan proyek Anda. `vercel.json` tetap memakai output `dist`.
